@@ -7,7 +7,7 @@
 #include "FS.h"
 #include "SPIFFS.h"
 
-#define ID_MQTT "TERROSO_PUB"
+#define ID_MQTT "esp_iot"
 #define topico_pub_temp "lab318/temp"
 #define topico_pub_umid "lab318/umid"
 
@@ -15,15 +15,12 @@
 #define DHTPIN 4
 #define DHTTYPE DHT22
 
-const char* ssid = "POCOX6Pro";    // ALTERE O NOME DA REDE
-const char* password = "esppucrs";  // INFORME A SENHA DA REDE
-
 DHT dht(DHTPIN, DHTTYPE);
 
 static long long tempo=0;
 
-const char* ssid = "motog8";
-const char* password = "0123456789";
+const char* ssid = "POCOX6Pro";    // ALTERE O NOME DA REDE
+const char* password = "esppucrs";  // INFORME A SENHA DA REDE
 
 const char* mqtt_broker = "broker.emqx.io";
 const int mqtt_port = 1883;
@@ -31,29 +28,31 @@ const int mqtt_port = 1883;
 WiFiClient espClient;
 PubSubClient MQTT(espClient);
 
+void MQTTConnect();
+void publish_data();
+void callback(char *topic, byte *payload, unsigned int length);
+void WIFIConnect();
+
 void setup() 
 {  
-    Serial.begin(115200);
-
+    Serial.begin(9600);
     WIFIConnect();
-
-    pinMode(led, OUTPUT);
-    pinMode(DHTPIN, INPUT);
+    MQTT.setServer(mqtt_broker, mqtt_port);    
 }
 
 void loop() 
 {
-
-}
-
-void MQTTServer()
-{
-    MQTT.setServer(mqtt_broker, mqtt_port);
-}
-
-void MQTTClient()
-{
-
+  static long long pooling = 0;
+  
+  if(!MQTT.connected()) MQTTConnect();
+  if(WiFi.status() != WL_CONNECTED) WIFIConnect();
+  
+  if(millis()>pooling+10000)
+  {
+    pooling = millis();
+    publish_data();
+  }
+  MQTT.loop();
 }
 
 void MQTTConnect()
@@ -105,9 +104,4 @@ void WIFIConnect()
     Serial.println("Conectando a rede wifi....");
   }
   Serial.println("Conectado a rede wifi");
-}
-
-void isConnectedWIFI()
-{
-    if(WiFi.status() != WL_CONNECTED) WIFIConnect();    
 }

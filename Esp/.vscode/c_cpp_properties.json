@@ -10,7 +10,6 @@
             "includePath": [
                 "c:/Users/mauricio.martins/Documents/Projects/EspMqTT/Esp/include",
                 "c:/Users/mauricio.martins/Documents/Projects/EspMqTT/Esp/src",
-                "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src",
                 "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src",
                 "c:/Users/mauricio.martins/Documents/Projects/EspMqTT/Esp/.pio/libdeps/esp32dev/PubSubClient/src",
                 "c:/Users/mauricio.martins/Documents/Projects/EspMqTT/Esp/.pio/libdeps/esp32dev/DHT sensor library",
@@ -244,6 +243,7 @@
                 "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src",
                 "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/USB/src",
                 "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/Update/src",
+                "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src",
                 "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src",
                 "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src",
                 "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
@@ -254,7 +254,6 @@
                 "path": [
                     "c:/Users/mauricio.martins/Documents/Projects/EspMqTT/Esp/include",
                     "c:/Users/mauricio.martins/Documents/Projects/EspMqTT/Esp/src",
-                    "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src",
                     "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src",
                     "c:/Users/mauricio.martins/Documents/Projects/EspMqTT/Esp/.pio/libdeps/esp32dev/PubSubClient/src",
                     "c:/Users/mauricio.martins/Documents/Projects/EspMqTT/Esp/.pio/libdeps/esp32dev/DHT sensor library",
@@ -488,6 +487,7 @@
                     "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/Ticker/src",
                     "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/USB/src",
                     "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/Update/src",
+                    "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src",
                     "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/WiFiClientSecure/src",
                     "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/WiFiProv/src",
                     "C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
