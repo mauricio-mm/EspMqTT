@@ -197,4 +197,5 @@
  .pio/libdeps/esp32dev/Adafruit\ Unified\ Sensor/Adafruit_Sensor.h \
  .pio/libdeps/esp32dev/DHT\ sensor\ library/DHT.h \
  C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/FS/src/FS.h \
- C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src/SPIFFS.h
+ C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src/SPIFFS.h \
+ include/utils.h

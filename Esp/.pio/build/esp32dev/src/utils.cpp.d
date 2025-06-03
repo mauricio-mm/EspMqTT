@@ -193,7 +193,7 @@
  C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/WiFiUdp.h \
  C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/cores/esp32/Udp.h \
  C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/cores/esp32/cbuf.h \
+ .pio/libdeps/esp32dev/PubSubClient/src/PubSubClient.h \
  C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/FS/src/FS.h \
  C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src/SPIFFS.h \
- .pio/libdeps/esp32dev/Adafruit\ Unified\ Sensor/Adafruit_Sensor.h \
- .pio/libdeps/esp32dev/DHT\ sensor\ library/DHT.h
+ .pio/libdeps/esp32dev/Adafruit\ Unified\ Sensor/Adafruit_Sensor.h
