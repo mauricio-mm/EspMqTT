@@ -8,11 +8,6 @@
 #include "SPIFFS.h"
 #include "utils.h"
 
-#define led 2
-#define DHTPIN 4
-#define DHTTYPE DHT22
-#define topico_pub "lab318/esp_py"
-
 WiFiClient espClient;
 PubSubClient MQTT(espClient);
 DHT dht(DHTPIN, DHTTYPE);
@@ -28,7 +23,17 @@ void setup()
     WIFIConnect(&espClient);
     MQTT.setServer(mqtt_broker, mqtt_port);   
     MQTT.setCallback(callback);
-}
+
+    //LED CONF
+    pinMode(LEDPIN, OUTPUT);
+
+    //DHT CONF
+    dht.begin();
+    pinMode(DHTPIN, INPUT);
+
+    //SERVO CONF
+    
+} 
 
 void loop() 
 {
@@ -40,7 +45,7 @@ void loop()
   if(millis()>pooling+10000)
   {
     pooling = millis();
-    publish_data(&MQTT, topico_pub, "teste\n");
+    publish_data(&MQTT, topic_dht, String(dht.readTemperature()) + ':' +String(dht.readHumidity()));
   }
 
   MQTT.loop();

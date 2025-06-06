@@ -13,7 +13,16 @@
 
 #include <Adafruit_Sensor.h>
 
+#define LEDPIN 2
+
+#define DHTPIN 4
+#define DHTTYPE DHT22
+
+#define SERVOPIN 3
+
 #define ID_MQTT "esp_iot"
+#define topic_led "lab318/led"
+#define topic_dht "lab318/dht"
 
 void WIFIConnect(WiFiClient *espClient);
 void MQTTConnect(PubSubClient *MQTT);
