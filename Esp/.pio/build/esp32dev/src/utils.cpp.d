@@ -196,4 +196,8 @@
  .pio/libdeps/esp32dev/PubSubClient/src/PubSubClient.h \
  C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/FS/src/FS.h \
  C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/libraries/SPIFFS/src/SPIFFS.h \
- .pio/libdeps/esp32dev/Adafruit\ Unified\ Sensor/Adafruit_Sensor.h
+ .pio/libdeps/esp32dev/Adafruit\ Unified\ Sensor/Adafruit_Sensor.h \
+ .pio/libdeps/esp32dev/ESP32Servo/src/ESP32Servo.h \
+ .pio/libdeps/esp32dev/ESP32Servo/src/ESP32PWM.h \
+ C:/Users/mauricio.martins/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-ledc.h \
+ include/main.h

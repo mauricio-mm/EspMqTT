@@ -11,6 +11,7 @@
 WiFiClient espClient;
 PubSubClient MQTT(espClient);
 DHT dht(DHTPIN, DHTTYPE);
+Servo servo;
 
 static long long tempo=0;
 
@@ -26,13 +27,14 @@ void setup()
 
     //LED CONF
     pinMode(LEDPIN, OUTPUT);
+    digitalWrite(LEDPIN, LOW);
 
     //DHT CONF
     dht.begin();
     pinMode(DHTPIN, INPUT);
 
     //SERVO CONF
-    
+    servo.attach(SERVOPIN);
 } 
 
 void loop() 
@@ -42,11 +44,11 @@ void loop()
   if(!MQTT.connected()) MQTTConnect(&MQTT);
   if(WiFi.status() != WL_CONNECTED) WIFIConnect(&espClient);
   
-  if(millis()>pooling+10000)
+  if(millis()>pooling+5000)
   {
     pooling = millis();
     publish_data(&MQTT, topic_dht, String(dht.readTemperature()) + ':' +String(dht.readHumidity()));
-  }
+  }  
 
   MQTT.loop();
 }

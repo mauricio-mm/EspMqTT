@@ -23,7 +23,8 @@ void MQTTConnect(PubSubClient *MQTT)
     if (MQTT->connect(ID_MQTT))
     {
       Serial.println("Conectado ao Broker!");
-      MQTT->subscribe(topic_led);      
+      MQTT->subscribe(topic_led);
+      MQTT->subscribe(topic_servo);      
     } 
     else 
     {
@@ -42,26 +43,18 @@ void publish_data(PubSubClient *MQTT,const char *topic, String data)
 void callback(char *topic, byte *payload, unsigned int length) 
 {
   if(String(topic) == "lab318/led") 
-  {
-      char msg_temp;
-      
-      for (int i = 0; i < length; i++) 
-      {              
-        //Serial.print((char) payload[i]);  
-        int estado = (char) payload[i] == '1' ? HIGH : LOW;      
-        digitalWrite(LEDPIN, estado);
-
-      }        
+  {      
+      int estado = (payload[0] == '1') ? HIGH : LOW;
+      digitalWrite(LEDPIN, estado);    
   }
 
   if(String(topic) == "lab318/servo") 
-  {
-      for (int i = 0; i < length; i++) 
-      {                      
-        int val = (char) payload[i];              
-        // servo.write(map(val, 0, 1023, 0, 180)); 
-
-      }        
+  {    
+      char msg[length + 1];
+      
+      memcpy(msg, payload, length);
+      msg[length] = '\0';      
+      servo.write(atoi(msg));
   }
   
 }

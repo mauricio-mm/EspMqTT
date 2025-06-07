@@ -6,45 +6,75 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>501</width>
-    <height>374</height>
+    <width>394</width>
+    <height>308</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLCDNumber" name="display">
+   <widget class="QLCDNumber" name="lcdNumber">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>20</y>
-      <width>181</width>
-      <height>81</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QDial" name="dial">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>180</y>
+      <x>20</x>
+      <y>10</y>
       <width>141</width>
-      <height>111</height>
+      <height>51</height>
      </rect>
     </property>
    </widget>
-   <widget class="QScrollBar" name="scroll">
+   <widget class="QPushButton" name="pushButton">
+ <property name="geometry">
+  <rect>
+   <x>50</x>
+   <y>160</y>
+   <width>91</width>
+   <height>81</height>
+  </rect>
+ </property>
+ <property name="text">
+  <string>&#x23FB;</string>
+ </property>
+ <property name="styleSheet">
+  <string notr="true">
+   QPushButton {
+       background-color: #B22222;
+       border: none;
+       border-radius: 40px;
+       color: white;
+       font-size: 28px;
+       font-weight: bold;
+       padding: 10px;
+   }
+   QPushButton:hover {
+       background-color: #cc3333;
+   }
+   QPushButton:pressed {
+       background-color: #800000;
+   }
+  </string>
+ </property>
+</widget>
+
+   <widget class="QLCDNumber" name="lcdNumber_2">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>220</y>
-      <width>191</width>
-      <height>31</height>
+      <x>20</x>
+      <y>80</y>
+      <width>141</width>
+      <height>51</height>
      </rect>
     </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+   </widget>
+   <widget class="QLCDNumber" name="lcdNumber_3">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>10</y>
+      <width>131</width>
+      <height>121</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -53,7 +83,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>501</width>
+     <width>394</width>
      <height>21</height>
     </rect>
    </property>
