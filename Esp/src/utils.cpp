@@ -29,8 +29,7 @@ void MQTTConnect(PubSubClient *MQTT)
     else 
     {
       Serial.print("Falha na conexão. O status é: ");
-      Serial.print(MQTT->state());
-      delay(2000);
+      Serial.print(MQTT->state());      
     }
   }
 }
@@ -54,7 +53,7 @@ void callback(char *topic, byte *payload, unsigned int length)
       
       memcpy(msg, payload, length);
       msg[length] = '\0';      
-      servo.write(atoi(msg));
+      servo.write(atoi(msg));      
   }
   
 }

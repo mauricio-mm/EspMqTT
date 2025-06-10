@@ -16,13 +16,12 @@ topic_led   = "lab318/led"
 topic_servo = "lab318/servo"
 
 enable    = False
-angle     = 5
+angle     = 1
 step      = 30  
-direction = 1
-
 
 def on_message(client, userdata, message):
     print(f"Mensagem recebida de {message.topic}: {message.payload.decode()}")
+    janela.lcdNumber_3.display(janela.dial.value())
 
     if message.topic == topic_dht:
         try:
@@ -76,24 +75,22 @@ def publish_led(client):
         """)
 
 def publish_servo(client):
-    global angle, direction
+    global angle, direction    
 
-    angle += step * direction
-    if angle >= 90:
-        angle = 90
-        direction = -1
-    elif angle <= 0:
-        angle = 0
-        direction = 1
-
+    angle = janela.dial.value()
+    if angle >= 180:
+        angle = 180        
+    elif angle <= 1:
+        angle = 1        
+    
     client.publish(topic_servo, str(angle).encode())
-
 
 def run():
     client = connect_mqtt()
     subscribe(client)
     client.loop_start()    
-
+    janela.dial.setMinimum(1)
+    janela.dial.setMaximum(180)
     # Define o estado inicial do botão e seu estilo
     global enable
     enable = False
@@ -109,8 +106,9 @@ def run():
 
     timer = QtCore.QTimer()
     timer.timeout.connect(lambda: publish_servo(client))
-    timer.start(5000)
+    timer.start(1000)
 
+    janela.lcdNumber_3.display(janela.dial.value())
     janela.pushButton.clicked.connect(lambda: publish_led(client))
 
     janela.show()

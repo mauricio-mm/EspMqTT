@@ -20,7 +20,7 @@
 #define DHTPIN 4
 #define DHTTYPE DHT22
 
-#define SERVOPIN 3
+#define SERVOPIN 16
 
 #define ID_MQTT "esp_iot"
 #define topic_led "lab318/led"

@@ -27,7 +27,7 @@ void setup()
 
     //LED CONF
     pinMode(LEDPIN, OUTPUT);
-    digitalWrite(LEDPIN, LOW);
+    digitalWrite(LEDPIN, HIGH);
 
     //DHT CONF
     dht.begin();
